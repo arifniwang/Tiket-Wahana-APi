@@ -3,7 +3,7 @@
 /* ROUTER FOR API GENERATOR */
 $namespace = '\crocodicstudio\crudbooster\controllers';
 
-Route::group(['middleware' => ['api', '\crocodicstudio\crudbooster\middlewares\CBAuthAPI'], 'namespace' => 'App\Http\Controllers'], function () {
+Route::group(['middleware' => ['cors', 'api', '\crocodicstudio\crudbooster\middlewares\CBAuthAPI'], 'namespace' => 'App\Http\Controllers'], function () {
     //Router for custom api defeault
 
     $dir = scandir(base_path("app/Http/Controllers"));
@@ -14,7 +14,7 @@ Route::group(['middleware' => ['api', '\crocodicstudio\crudbooster\middlewares\C
 
         if (substr($names, 0, 4) == 'api_') {
             $names = str_replace('api_', '', $names);
-            Route::any('api/'.$names, $v.'@execute_api');
+            Route::any('api/' . $names, $v . '@execute_api');
         }
     }
 });
@@ -46,8 +46,8 @@ Route::group([
     'prefix' => config('crudbooster.ADMIN_PATH'),
     'namespace' => 'App\Http\Controllers',
 ], function () use ($namespace) {
- 
-    Route::get('/',function () {
+
+    Route::get('/', function () {
     });
     try {
         $moduls = DB::table('cms_moduls')->where('path', '!=', '')->where('controller', '!=', '')
@@ -56,7 +56,6 @@ Route::group([
             CRUDBooster::routeController($v->path, $v->controller);
         }
     } catch (Exception $e) {
-
     }
 });
 
@@ -70,7 +69,7 @@ Route::group([
     /* DO NOT EDIT THESE BELLOW LINES */
     if (Request::is(config('crudbooster.ADMIN_PATH'))) {
         $menus = DB::table('cms_menus')->where('is_dashboard', 1)->first();
-        if (! $menus) {
+        if (!$menus) {
             CRUDBooster::routeController('/', 'AdminController', $namespace = '\crocodicstudio\crudbooster\controllers');
         }
     }
@@ -79,7 +78,7 @@ Route::group([
 
     try {
 
-        $master_controller = glob(__DIR__.'/controllers/*.php');
+        $master_controller = glob(__DIR__ . '/controllers/*.php');
         foreach ($master_controller as &$m) {
             $m = str_replace('.php', '', basename($m));
         }
@@ -92,6 +91,5 @@ Route::group([
             }
         }
     } catch (Exception $e) {
-
     }
 });
