@@ -1,0 +1,11 @@
+<?php
+namespace App\Services;
+
+use DB;
+use App\Repositories\[className]Repository;
+
+class [className]Service
+{
+    // TODO : Make you own service method
+
+}
