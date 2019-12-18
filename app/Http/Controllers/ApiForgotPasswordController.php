@@ -14,7 +14,6 @@ class ApiForgotPasswordController extends \crocodicstudio\crudbooster\controller
         $this->method_type = "post";
         
         $validator['email'] = 'required|string|email|min:1|max:150';
-        $validator['password'] = 'required|string|min:1|max:100';
         Udinus::Validator($validator);
     }
     

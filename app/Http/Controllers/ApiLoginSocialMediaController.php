@@ -74,7 +74,6 @@ class ApiLoginSocialMediaController extends \crocodicstudio\crudbooster\controll
                 $data['phone'] = $customer->getPhone();
                 $data['saldo'] = $customer->getSaldo();
                 $data['password'] = ($customer->getPassword() == '' ? 'Empty' : 'Not Empty');
-                $data['pin'] = ($customer->getPin() == '' ? 'Empty' : 'Not Empty');
                 $data['facebook_login'] = ($customer->getFacebookId() == '' ? FALSE : TRUE);
                 $data['google_login'] = ($customer->getGoogleId() == '' ? FALSE : TRUE);
     
