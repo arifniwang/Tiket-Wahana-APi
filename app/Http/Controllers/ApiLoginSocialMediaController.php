@@ -16,8 +16,6 @@ class ApiLoginSocialMediaController extends \crocodicstudio\crudbooster\controll
         $validator['social_id'] = 'required|string|min:1|max:100';
         $validator['image'] = 'nullable|url';
         $validator['name'] = 'nullable|string|min:1|max:150';
-        $validator['phone_code'] = 'nullable|string|min:3|max:5';
-        $validator['phone'] = 'nullable|numeric|digits_between:10,15';
         $validator['email'] = 'nullable|email|min:1|max:150';
         Udinus::Validator($validator);
     }
@@ -31,8 +29,6 @@ class ApiLoginSocialMediaController extends \crocodicstudio\crudbooster\controll
             $name = g('name');
             $image = g('image');
             $email = g('email');
-            $phone_code = g('phone_code');
-            $phone = g('phone');
             
             if ($type == 'Facebook') {
                 $customer = CustomerRepository::findByFacebookId($social_id);
@@ -59,8 +55,6 @@ class ApiLoginSocialMediaController extends \crocodicstudio\crudbooster\controll
                     $customer->setName($name);
                     $customer->setImage(Udinus::CopyImageUrl($image));
                     $customer->setEmail($email);
-                    $customer->setPhoneCode($phone_code);
-                    $customer->setPhone($phone);
                     $customer->setSaldo(0);
                     $customer->save();
                 }
@@ -70,8 +64,8 @@ class ApiLoginSocialMediaController extends \crocodicstudio\crudbooster\controll
                 $data['image'] = Udinus::file($customer->getImage());
                 $data['name'] = $customer->getName();
                 $data['email'] = $customer->getEmail();
-                $data['phone_code'] = $customer->getPhoneCode();
-                $data['phone'] = $customer->getPhone();
+                $data['phone_code'] = ($customer->getPhoneCode() == '' ? '' : $customer->getPhoneCode());
+                $data['phone'] = ($customer->getPhone() == '' ? '' : $customer->getPhone());
                 $data['saldo'] = $customer->getSaldo();
                 $data['password'] = ($customer->getPassword() == '' ? 'Empty' : 'Not Empty');
                 $data['facebook_login'] = ($customer->getFacebookId() == '' ? FALSE : TRUE);

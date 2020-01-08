@@ -14,7 +14,6 @@ class ApiDisconnectSocialMediaController extends \crocodicstudio\crudbooster\con
         
         $validator['user_id'] = 'required|numeric';
         $validator['type'] = 'required|string|in:Facebook,Google';
-        $validator['pin'] = 'required|integer|digits:6';
         Udinus::Validator($validator);
     }
     
@@ -23,7 +22,6 @@ class ApiDisconnectSocialMediaController extends \crocodicstudio\crudbooster\con
     {
         $user_id = g('user_id');
         $type = g('type');
-        $pin = g('pin');
         
         try {
             $customer = CustomerRepository::findById($user_id);
@@ -33,38 +31,30 @@ class ApiDisconnectSocialMediaController extends \crocodicstudio\crudbooster\con
                 $response['api_message'] = 'Akun anda tidak ditemukan, silahkan login kembali';
                 $json = response()->json($response, 401);
             } else {
-                if ($pin == $customer->getPin()) {
-                    
-                    if ($type == 'Facebook') {
-                        $customer->setFacebookId(NULL);
-                    } else {
-                        $customer->setGoogleId(NULL);
-                    }
-                    $customer->save();
-    
-                    $data['id'] = $customer->getId();
-                    $data['qrcode'] = Udinus::QRCode($customer->getQrcode());
-                    $data['image'] = Udinus::file($customer->getImage());
-                    $data['name'] = $customer->getName();
-                    $data['email'] = $customer->getEmail();
-                    $data['phone_code'] = $customer->getPhoneCode();
-                    $data['phone'] = $customer->getPhone();
-                    $data['saldo'] = $customer->getSaldo();
-                    $data['password'] = ($customer->getPassword() == '' ? 'Empty' : 'Not Empty');
-                    $data['pin'] = ($customer->getPin() == '' ? 'Empty' : 'Not Empty');
-                    $data['facebook_login'] = ($customer->getFacebookId() == '' ? FALSE : TRUE);
-                    $data['google_login'] = ($customer->getGoogleId() == '' ? FALSE : TRUE);
-                    
-                    $response['api_status'] = 1;
-                    $response['api_message'] = 'Berhasil menghapus ' . $type;
-                    $response['data'] = $data;
-                    $json = response()->json($response, 400);
-                    
+                if ($type == 'Facebook') {
+                    $customer->setFacebookId(NULL);
                 } else {
-                    $response['api_status'] = 0;
-                    $response['api_message'] = 'Pin yang anda masukan salah';
-                    $json = response()->json($response, 400);
+                    $customer->setGoogleId(NULL);
                 }
+                $customer->save();
+                
+                $data['id'] = $customer->getId();
+                $data['qrcode'] = Udinus::QRCode($customer->getQrcode());
+                $data['image'] = Udinus::file($customer->getImage());
+                $data['name'] = $customer->getName();
+                $data['email'] = $customer->getEmail();
+                $data['phone_code'] = $customer->getPhoneCode();
+                $data['phone'] = $customer->getPhone();
+                $data['saldo'] = $customer->getSaldo();
+                $data['password'] = ($customer->getPassword() == '' ? 'Empty' : 'Not Empty');
+                $data['facebook_login'] = ($customer->getFacebookId() == '' ? FALSE : TRUE);
+                $data['google_login'] = ($customer->getGoogleId() == '' ? FALSE : TRUE);
+                
+                $response['api_status'] = 1;
+                $response['api_message'] = 'Berhasil menghapus ' . $type;
+                $response['data'] = $data;
+                $json = response()->json($response, 400);
+                
             }
         } catch (\Exception $e) {
             $response['api_status'] = 0;

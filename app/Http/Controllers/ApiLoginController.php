@@ -51,8 +51,8 @@ class ApiLoginController extends \crocodicstudio\crudbooster\controllers\ApiCont
                 $data['image'] = Udinus::file($customer->getImage());
                 $data['name'] = $customer->getName();
                 $data['email'] = $customer->getEmail();
-                $data['phone_code'] = $customer->getPhoneCode();
-                $data['phone'] = $customer->getPhone();
+                $data['phone_code'] = ($customer->getPhoneCode() == '' ? '' : $customer->getPhoneCode());
+                $data['phone'] = ($customer->getPhone() == '' ? '' : $customer->getPhone());
                 $data['saldo'] = $customer->getSaldo();
                 $data['password'] = ($customer->getPassword() == '' ? 'Empty' : 'Not Empty');
                 $data['facebook_login'] = ($customer->getFacebookId() == '' ? FALSE : TRUE);
