@@ -2,6 +2,7 @@
 
 use App\Repositories\CustomerRepository;
 use App\Helpers\Udinus;
+use crocodicstudio\crudbooster\helpers\CRUDBooster;
 
 class ApiProfileUpdateController extends \crocodicstudio\crudbooster\controllers\ApiController
 {
@@ -14,9 +15,10 @@ class ApiProfileUpdateController extends \crocodicstudio\crudbooster\controllers
         
         $validator['user_id'] = 'required|numeric';
         $validator['name'] = 'required|string|min:1|max:150';
-        $validator['phone_code'] = 'required|string|min:3|max:5';
-        $validator['phone'] = 'required|numeric|digits_between:10,15';
+        $validator['phone_code'] = 'nullable|string|min:3|max:5';
+        $validator['phone'] = 'nullable|numeric|digits_between:10,15';
         $validator['email'] = 'required|string|email|min:1|max:150';
+        $validator['image'] = 'nullable|string';
         Udinus::Validator($validator);
     }
     
@@ -28,6 +30,7 @@ class ApiProfileUpdateController extends \crocodicstudio\crudbooster\controllers
         $phone_code = g('phone_code');
         $phone = g('phone');
         $email = g('email');
+        $image = g('image');
         
         try {
             $customer = CustomerRepository::findById($user_id);
@@ -48,6 +51,12 @@ class ApiProfileUpdateController extends \crocodicstudio\crudbooster\controllers
                     $response['api_message'] = 'Telepon sudah digunakan';
                     $json = response()->json($response, 400);
                 } else {
+                    
+                    if ($image != ''){
+                        $image = CRUDBooster::uploadBase64($image);
+                        $customer->setImage($image);
+                    }
+                    
                     $customer->setName($name);
                     $customer->setPhoneCode($phone_code);
                     $customer->setPhone($phone);

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dc648186-5d58-4dbb-bc52-e5ea5380821b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiProfileUpdateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiProfileUpdateController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,25 +78,27 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="php" value="16" />
+          <entry key="js" value="1" />
+          <entry key="php" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="16" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PHP" value="17" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="80" />
-          <entry key="txt" value="16" />
+          <entry key="php" value="201" />
+          <entry key="txt" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="80" />
-          <entry key="PLAIN_TEXT" value="16" />
+          <entry key="PHP" value="201" />
+          <entry key="PLAIN_TEXT" value="35" />
         </counts>
       </usages-collector>
     </session>
@@ -131,40 +133,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Cors.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiProfileUpdateController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-              <folding>
-                <marker date="1578454964247" expanded="true" signature="281:422" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiRegisterController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiDisconnectSocialMediaController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiLoginSocialMediaController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="834">
-              <caret line="73" column="30" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
+            <state relative-caret-position="99">
+              <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -173,9 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cb</find>
-      <find>\api</find>
-      <find>nume</find>
       <find>numbe</find>
       <find>mulai</find>
       <find>unique</find>
@@ -203,6 +172,9 @@
       <find>pin</find>
       <find>cors</find>
       <find>cor</find>
+      <find>image</find>
+      <find>base64</find>
+      <find>base6</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -242,7 +214,6 @@
         <option value="$PROJECT_DIR$/app/Helpers/Udinus.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiActivityController.php" />
         <option value="$PROJECT_DIR$/app/Repositories/CustomerRepository.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiProfileUpdateController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiProfileController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiConnectSocialMediaController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiTopUpInfoController.php" />
@@ -262,6 +233,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiDisconnectSocialMediaController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiAboutController.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Cors.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiProfileUpdateController.php" />
       </list>
     </option>
   </component>
@@ -579,7 +551,7 @@
       <workItem from="1576656501491" duration="1838000" />
       <workItem from="1577373668096" duration="313000" />
       <workItem from="1577427505418" duration="515000" />
-      <workItem from="1578447651022" duration="3017000" />
+      <workItem from="1578447651022" duration="3516000" />
     </task>
     <task id="LOCAL-00001" summary="- fix api (1)">
       <created>1576657500139</created>
@@ -595,17 +567,24 @@
       <option name="project" value="LOCAL" />
       <updated>1578453135270</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- fix api (3)&#10;- set header cors">
+      <created>1578455472968</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578455472968</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44413000" />
+    <option name="totallyTimeSpent" value="44912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -620,7 +599,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32678133" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32678133" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -636,16 +615,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- fix api (1)" />
     <MESSAGE value="- fix api (2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="- fix api (2)" />
+    <MESSAGE value="- fix api (3)&#10;- set header cors" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fix api (3)&#10;- set header cors" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/helpers/CRUDBooster.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="1351" column="13" lean-forward="true" selection-start-line="1351" selection-start-column="13" selection-end-line="1351" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang/id/auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -788,13 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiProfileUpdateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="64" column="66" selection-start-line="64" selection-start-column="66" selection-end-line="64" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -944,13 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiLoginSocialMediaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="834">
-          <caret line="73" column="30" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiLoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -965,19 +924,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiAboutController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/jquery.formatCurrency-1.4.0.pack.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Cors.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -986,6 +941,27 @@
           <folding>
             <marker date="1578454964247" expanded="true" signature="281:422" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiLoginSocialMediaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="834">
+          <caret line="73" column="30" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiProfileUpdateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
         </state>
       </provider>
     </entry>
