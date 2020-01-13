@@ -8,6 +8,11 @@ use CRUDBooster;
 class AdminIndexController extends \crocodicstudio\crudbooster\controllers\CBController
 {
     
+    public function getIndex()
+    {
+        return view('admin.index');
+    }
+    
     public function cbInit()
     {
         # START CONFIGURATION DO NOT REMOVE THIS LINE

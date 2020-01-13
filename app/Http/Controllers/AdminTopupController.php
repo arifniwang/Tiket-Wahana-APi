@@ -11,7 +11,9 @@ class AdminTopupController extends \crocodicstudio\crudbooster\controllers\CBCon
     public function cbInit()
     {
         if (Request::segment(3) != 'add' && Request::segment(3) != 'add-save') {
-            CRUDBooster::redirect(CRUDBooster::mainpath('add'), 'Page is not valid');
+            $resp = redirect(CRUDBooster::mainpath('add'));
+            $resp->send();
+            exit;
         }
         
         # START CONFIGURATION DO NOT REMOVE THIS LINE
