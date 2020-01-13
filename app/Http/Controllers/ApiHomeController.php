@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Helpers\Udinus;
+use App\Repositories\ActivityRepository;
 use App\Repositories\CustomerRepository;
 
 class ApiHomeController extends \crocodicstudio\crudbooster\controllers\ApiController
@@ -16,11 +17,12 @@ class ApiHomeController extends \crocodicstudio\crudbooster\controllers\ApiContr
         Udinus::Validator($validator);
     }
     
-    
     public function hook_before(&$postdata)
     {
         try {
             $customer = CustomerRepository::findById(g('user_id'));
+            $activity = ActivityRepository::getHome($customer->getId());
+            
             if ($customer->getId() == '') {
                 $response['api_status'] = 0;
                 $response['api_message'] = 'Akun anda tidak ditemukan, silahkan login kembali';
@@ -28,6 +30,9 @@ class ApiHomeController extends \crocodicstudio\crudbooster\controllers\ApiContr
             } else {
                 $response['api_status'] = 1;
                 $response['api_message'] = 'Load data berhasil';
+                $response['name'] = $customer->getName();
+                $response['saldo'] = $customer->getSaldo();
+                $response['data'] = $activity;
                 $json = response()->json($response, 200);
             }
         } catch (\Exception $e) {

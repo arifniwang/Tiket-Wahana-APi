@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Helpers\Udinus;
+use App\Repositories\ActivityRepository;
 use App\Repositories\CustomerRepository;
 
 class ApiActivityController extends \crocodicstudio\crudbooster\controllers\ApiController
@@ -22,6 +23,7 @@ class ApiActivityController extends \crocodicstudio\crudbooster\controllers\ApiC
     
     public function hook_before(&$postdata)
     {
+        $user_id = g('user_id');
         $date_start = (g('date_start') != '' ? date('Y-m-d',strtotime(g('date_start'))) : '');
         $date_end = (g('date_end') != '' ? date('Y-m-d',strtotime(g('date_start'))) : '');
         $type = g('type');
@@ -35,7 +37,6 @@ class ApiActivityController extends \crocodicstudio\crudbooster\controllers\ApiC
             } else {
                 $response['api_status'] = 1;
                 $response['api_message'] = 'Load data berhasil';
-                $response['data'] = [];
                 $json = response()->json($response, 200);
             }
         } catch (\Exception $e) {

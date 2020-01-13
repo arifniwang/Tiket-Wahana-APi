@@ -52,7 +52,7 @@ class ApiScanController extends \crocodicstudio\crudbooster\controllers\ApiContr
 
                 $activity = new ActivityRepository();
                 $activity->setCustomersId($customer->getId());
-                $activity->setName('Wahana '.$wahana->getName());
+                $activity->setName($wahana->getName());
                 $activity->setType('Scan');
                 $activity->setNominal($wahana->getNominal());
                 $activity->setSisaSaldo($sisa_saldo);
