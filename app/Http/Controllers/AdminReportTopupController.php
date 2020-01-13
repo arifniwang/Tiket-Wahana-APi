@@ -3,7 +3,7 @@
 use Session;
 use Request;
 use DB;
-use CRUDBooster;
+use crocodicstudio\crudbooster\helpers\CRUDBooster;
 
 class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers\CBController
 {
@@ -36,9 +36,11 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         $this->col[] = array("label" => "Created Datetime", "name" => "created_at");
         $this->col[] = array("label" => "Topup Code", "name" => "topup_code");
         $this->col[] = array("label" => "Customers Id", "name" => "customers_id", "join" => "customer,name");
-        $this->col[] = array("label" => "Merchant Id", "name" => "merchant_id", "join" => "cms_users,name");
-        $this->col[] = array("label" => "Nominal", "name" => "nominal","callback"=>function($row){
-            return number_format($row->nominal,2,',','.');
+        if (CRUDBooster::myPrivilegeId() != 3) {
+            $this->col[] = array("label" => "Merchant Id", "name" => "merchant_id", "join" => "cms_users,name");
+        }
+        $this->col[] = array("label" => "Nominal", "name" => "nominal", "callback" => function ($row) {
+            return number_format($row->nominal, 2, ',', '.');
         });
         # END COLUMNS DO NOT REMOVE THIS LINE
         
@@ -49,9 +51,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         $this->form[] = ["label" => "Merchant Id", "name" => "merchant_id", "type" => "select2", "required" => TRUE, "validation" => "required|integer|min:0", "datatable" => "merchant,id"];
         $this->form[] = ["label" => "Nominal", "name" => "nominal", "type" => "number", "required" => TRUE, "validation" => "required|integer|min:0"];
         # END FORM DO NOT REMOVE THIS LINE
-    
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Sub Module
@@ -65,8 +66,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->sub_module = array();
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Add More Action Button / Menu
@@ -79,8 +80,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->addaction = array();
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Add More Button Selected
@@ -92,8 +93,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->button_selected = array();
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Add alert message to this module at overheader
@@ -103,8 +104,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->alert = array();
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Add more button to header button
@@ -115,8 +116,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->index_button = array();
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Customize Table Row Color
@@ -126,8 +127,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->table_row_color = array();
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | You may use this bellow array to add statistic at dashboard
@@ -136,8 +137,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->index_statistic = array();
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Add javascript at body
@@ -147,8 +148,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->script_js = NULL;
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Include HTML Code before index table
@@ -158,8 +159,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->pre_index_html = null;
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Include HTML Code after index table
@@ -169,8 +170,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->post_index_html = null;
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Include Javascript File
@@ -180,8 +181,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->load_js = array();
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Add css style at body
@@ -191,8 +192,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->style_css = NULL;
-    
-    
+        
+        
         /*
         | ----------------------------------------------------------------------
         | Include css File
@@ -202,8 +203,8 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         |
         */
         $this->load_css = array();
-    
-    
+        
+        
     }
     
     
@@ -232,7 +233,9 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
     public function hook_query_index(&$query)
     {
         //Your code here
-        
+        if (CRUDBooster::myPrivilegeId() == 3) {
+            $query->where('merchant_id', CRUDBooster::myId());
+        }
     }
     
     /*

@@ -35,7 +35,9 @@ class AdminWahanaController extends \crocodicstudio\crudbooster\controllers\CBCo
         $this->col[] = array("label" => "Qrcode", "name" => "qrcode", "image" => TRUE);
         $this->col[] = array("label" => "Image", "name" => "image", "image" => TRUE);
         $this->col[] = array("label" => "Name", "name" => "name");
-        $this->col[] = array("label" => "Nominal", "name" => "nominal");
+        $this->col[] = array("label" => "Nominal", "name" => "nominal", "callback" => function ($row) {
+            return number_format($row->nominal, 2, ',', '.');
+        });
         $this->col[] = array("label" => "Status", "name" => "status", "callback" => function ($row) {
             if ($row->status == 'Buka') {
                 $result = '<span class="badge" style="background-color: #00a65a;">' . $row->status . '</span>';
