@@ -23,11 +23,6 @@ class ApiActivityController extends \crocodicstudio\crudbooster\controllers\ApiC
     
     public function hook_before(&$postdata)
     {
-        $user_id = g('user_id');
-        $date_start = (g('date_start') != '' ? date('Y-m-d',strtotime(g('date_start'))) : '');
-        $date_end = (g('date_end') != '' ? date('Y-m-d',strtotime(g('date_start'))) : '');
-        $type = g('type');
-    
         $customer = CustomerRepository::findById(g('user_id'));
         $activity = ActivityRepository::getAll($customer->getId());
         

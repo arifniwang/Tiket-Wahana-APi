@@ -31,7 +31,7 @@ class ApiHomeController extends \crocodicstudio\crudbooster\controllers\ApiContr
                 $response['api_status'] = 1;
                 $response['api_message'] = 'Load data berhasil';
                 $response['name'] = $customer->getName();
-                $response['saldo'] = $customer->getSaldo();
+                $response['saldo'] = 'Rp '.number_format($customer->getSaldo(),2,',','.');
                 $response['data'] = $activity;
                 $json = response()->json($response, 200);
             }
