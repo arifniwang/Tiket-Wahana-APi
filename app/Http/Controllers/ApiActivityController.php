@@ -27,6 +27,9 @@ class ApiActivityController extends \crocodicstudio\crudbooster\controllers\ApiC
         $date_start = (g('date_start') != '' ? date('Y-m-d',strtotime(g('date_start'))) : '');
         $date_end = (g('date_end') != '' ? date('Y-m-d',strtotime(g('date_start'))) : '');
         $type = g('type');
+    
+        $customer = CustomerRepository::findById(g('user_id'));
+        $activity = ActivityRepository::getAll($customer->getId());
         
         try {
             $customer = CustomerRepository::findById(g('user_id'));
@@ -37,6 +40,7 @@ class ApiActivityController extends \crocodicstudio\crudbooster\controllers\ApiC
             } else {
                 $response['api_status'] = 1;
                 $response['api_message'] = 'Load data berhasil';
+                $response['data'] = $activity;
                 $json = response()->json($response, 200);
             }
         } catch (\Exception $e) {

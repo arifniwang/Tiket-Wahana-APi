@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dc648186-5d58-4dbb-bc52-e5ea5380821b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminReportTopupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminReportTopupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminWahanaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminWahanaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiActivityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ActivityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ActivityRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,27 +81,27 @@
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="js" value="1" />
-          <entry key="php" value="41" />
+          <entry key="php" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Blade" value="3" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="38" />
+          <entry key="PHP" value="42" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="2484" />
+          <entry key="php" value="3050" />
           <entry key="txt" value="68" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="164" />
-          <entry key="PHP" value="2320" />
+          <entry key="PHP" value="2886" />
           <entry key="PLAIN_TEXT" value="68" />
         </counts>
       </usages-collector>
@@ -111,55 +110,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminIndexController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiHomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminTopupController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4150">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#39#79#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminReportTopupController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="43" column="11" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="43" selection-end-column="11" />
-              <folding>
-                <element signature="e#39#51#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="43">
+              <caret line="22" column="67" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminWahanaController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiActivityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="358">
+              <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/ActivityRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -206,7 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/helpers/Helper.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/lang/id/auth.php" />
         <option value="$PROJECT_DIR$/resources/lang/id/pagination.php" />
@@ -219,12 +190,10 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_12_04_143206_add_image_wahana.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiActivityTypeController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_04_153306_create_activity_type.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiHomeController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_04_134827_add_phone_code.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiChangePinController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiChangePasswordController.php" />
         <option value="$PROJECT_DIR$/app/Helpers/Udinus.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiActivityController.php" />
         <option value="$PROJECT_DIR$/app/Repositories/CustomerRepository.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiProfileController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiConnectSocialMediaController.php" />
@@ -247,7 +216,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiProfileUpdateController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminReportScanController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_13_145449_add_sisa_saldo_activity.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiScanController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_13_150941_add_activity_id_topup.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminReportActivityController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/topup.blade.php" />
@@ -257,6 +225,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminReportTopupController.php" />
         <option value="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminWahanaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiHomeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiScanController.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/ActivityRepository.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiActivityController.php" />
       </list>
     </option>
   </component>
@@ -580,7 +552,7 @@
       <workItem from="1577373668096" duration="313000" />
       <workItem from="1577427505418" duration="515000" />
       <workItem from="1578447651022" duration="4017000" />
-      <workItem from="1578898836690" duration="5130000" />
+      <workItem from="1578898836690" duration="7398000" />
     </task>
     <task id="LOCAL-00001" summary="- fix api (1)">
       <created>1576657500139</created>
@@ -624,11 +596,32 @@
       <option name="project" value="LOCAL" />
       <updated>1578904189562</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="- fix backend">
+      <created>1578911694762</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578911694762</updated>
+    </task>
+    <task id="LOCAL-00008" summary="- fix backend">
+      <created>1578911866812</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1578911866812</updated>
+    </task>
+    <task id="LOCAL-00009" summary="- fix backend">
+      <created>1578918942881</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1578918942881</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50543000" />
+    <option name="totallyTimeSpent" value="52811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -671,13 +664,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="- fix backend" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminCustomerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="45" column="198" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="198" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_04_153306_create_activity_type.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiActivityTypeController.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_04_134827_add_phone_code.php">
@@ -698,13 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="34" column="80" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiActivityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="17" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -733,13 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8">
           <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiHomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="15" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="39" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -944,16 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiScanController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="58" column="34" lean-forward="true" selection-start-line="52" selection-start-column="16" selection-end-line="58" selection-end-column="34" />
-          <folding>
-            <element signature="e#39#79#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminReportActivityController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -972,13 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1009,7 +964,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminReportTopupController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
-          <caret line="43" column="11" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="43" selection-end-column="11" />
+          <caret line="43" column="11" selection-start-line="41" selection-start-column="8" selection-end-line="43" selection-end-column="11" />
           <folding>
             <element signature="e#39#51#0#PHP" expanded="true" />
           </folding>
@@ -1018,11 +973,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminWahanaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+        <state relative-caret-position="278">
+          <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/ActivityRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiScanController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+          <folding>
+            <element signature="e#39#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiHomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="22" column="67" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiActivityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
         </state>
       </provider>
     </entry>
