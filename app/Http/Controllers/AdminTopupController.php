@@ -1,28 +1,19 @@
 <?php namespace App\Http\Controllers;
 
+use App\Repositories\ActivityRepository;
+use App\Repositories\CustomerRepository;
 use crocodicstudio\crudbooster\helpers\CRUDBooster;
+use Illuminate\Support\Facades\Request;
 
 class AdminTopupController extends \crocodicstudio\crudbooster\controllers\CBController
 {
-    public function getIndex()
-    {
-        return view('admin.topup');
-    }
-    
-    public function getCustomer()
-    {
-        $type = g('type');
-        $value = g('value');
-    }
-    
-    public function getTopUp()
-    {
-        $customer_id = g('customer_id');
-        $nominal = g('nominal');
-    }
     
     public function cbInit()
     {
+        if (Request::segment(3) != 'add' && Request::segment(3) != 'add-save') {
+            CRUDBooster::redirect(CRUDBooster::mainpath('add'), 'Page is not valid');
+        }
+        
         # START CONFIGURATION DO NOT REMOVE THIS LINE
         $this->table = "topup";
         $this->title_field = "id";
@@ -37,7 +28,7 @@ class AdminTopupController extends \crocodicstudio\crudbooster\controllers\CBCon
         $this->button_edit = TRUE;
         $this->button_detail = TRUE;
         $this->button_show = TRUE;
-        $this->button_filter = TRUE;
+        $this->button_filter = FALSE;
         $this->button_export = FALSE;
         $this->button_import = FALSE;
         $this->button_bulk_action = TRUE;
@@ -46,12 +37,12 @@ class AdminTopupController extends \crocodicstudio\crudbooster\controllers\CBCon
         
         # START COLUMNS DO NOT REMOVE THIS LINE
         $this->col = [];
-        
         # END COLUMNS DO NOT REMOVE THIS LINE
         
         # START FORM DO NOT REMOVE THIS LINE
         $this->form = [];
-        
+        $this->form[] = ["label" => "Customers", "name" => "customers_id", "type" => "select2", "required" => TRUE, "validation" => "required|integer|min:0", "datatable" => "customer,name", "datatable_format" => "name,' (',phone_code,phone,')'"];
+        $this->form[] = ["label" => "Nominal", "name" => "nominal", "type" => "number", "required" => TRUE, "validation" => "required|integer|min:10000", "help" => "minimal topup Rp 10.000","datatable_where"=>"deleted_at is null"];
         # END FORM DO NOT REMOVE THIS LINE
         
         /*
@@ -257,8 +248,20 @@ class AdminTopupController extends \crocodicstudio\crudbooster\controllers\CBCon
 	*/
     public function hook_before_add(&$postdata)
     {
-        //Your code here
+        $customer = CustomerRepository::findById($postdata['customers_id']);
+        $sisa_saldo = $customer->getSaldo() + $postdata['nominal'];
         
+        $activity = new ActivityRepository();
+        $activity->setCustomersId($customer->getId());
+        $activity->setName('Top Up');
+        $activity->setType('Topup');
+        $activity->setNominal($postdata['nominal']);
+        $activity->setSisaSaldo($sisa_saldo);
+        $activity->save();
+        
+        $postdata['topup_code'] = 'TP-'.date('dmy').'-'.str_random(5);
+        $postdata['merchant_id'] = CRUDBooster::myId();
+        $postdata['activity_id'] = $activity->getId();
     }
     
     /*
@@ -271,7 +274,7 @@ class AdminTopupController extends \crocodicstudio\crudbooster\controllers\CBCon
     public function hook_after_add($id)
     {
         //Your code here
-        
+        CRUDBooster::redirectBack('Topup Berhasil','success');
     }
     
     /*

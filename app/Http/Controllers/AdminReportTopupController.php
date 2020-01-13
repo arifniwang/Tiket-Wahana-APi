@@ -17,26 +17,29 @@ class AdminReportTopupController extends \crocodicstudio\crudbooster\controllers
         $this->orderby = "id,desc";
         $this->show_numbering = FALSE;
         $this->global_privilege = FALSE;
-        $this->button_table_action = TRUE;
+        $this->button_table_action = FALSE;
         $this->button_action_style = "button_icon";
-        $this->button_add = TRUE;
-        $this->button_delete = TRUE;
-        $this->button_edit = TRUE;
-        $this->button_detail = TRUE;
-        $this->button_show = TRUE;
-        $this->button_filter = TRUE;
-        $this->button_export = FALSE;
+        $this->button_add = FALSE;
+        $this->button_delete = FALSE;
+        $this->button_edit = FALSE;
+        $this->button_detail = FALSE;
+        $this->button_show = FALSE;
+        $this->button_filter = FALSE;
+        $this->button_export = TRUE;
         $this->button_import = FALSE;
-        $this->button_bulk_action = TRUE;
+        $this->button_bulk_action = FALSE;
         $this->sidebar_mode = "normal"; //normal,mini,collapse,collapse-mini
         # END CONFIGURATION DO NOT REMOVE THIS LINE
         
         # START COLUMNS DO NOT REMOVE THIS LINE
         $this->col = [];
+        $this->col[] = array("label" => "Created Datetime", "name" => "created_at");
         $this->col[] = array("label" => "Topup Code", "name" => "topup_code");
-        $this->col[] = array("label" => "Customers Id", "name" => "customers_id", "join" => "customers,id");
-        $this->col[] = array("label" => "Merchant Id", "name" => "merchant_id", "join" => "merchant,id");
-        $this->col[] = array("label" => "Nominal", "name" => "nominal");
+        $this->col[] = array("label" => "Customers Id", "name" => "customers_id", "join" => "customer,name");
+        $this->col[] = array("label" => "Merchant Id", "name" => "merchant_id", "join" => "cms_users,name");
+        $this->col[] = array("label" => "Nominal", "name" => "nominal","callback"=>function($row){
+            return number_format($row->nominal,2,',','.');
+        });
         # END COLUMNS DO NOT REMOVE THIS LINE
         
         # START FORM DO NOT REMOVE THIS LINE

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhoneCode extends Migration
+class AddActivityIdTopup extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreatePhoneCode extends Migration
      */
     public function up()
     {
-        Schema::create('phone_code', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::table('topup', function (Blueprint $table) {
+            $table->integer('activity_id');
         });
     }
 
@@ -26,6 +25,8 @@ class CreatePhoneCode extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phone_code');
+        Schema::table('topup', function (Blueprint $table) {
+            $table->dropColumn('activity_id');
+        });
     }
 }
