@@ -261,6 +261,9 @@ class AdminTopupController extends \crocodicstudio\crudbooster\controllers\CBCon
         $activity->setSisaSaldo($sisa_saldo);
         $activity->save();
         
+        $customer->setSaldo($sisa_saldo);
+        $customer->save();
+        
         $postdata['topup_code'] = 'TP-'.date('dmy').'-'.str_random(5);
         $postdata['merchant_id'] = CRUDBooster::myId();
         $postdata['activity_id'] = $activity->getId();
